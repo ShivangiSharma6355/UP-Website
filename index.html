@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="logo.png" alt="click" class="logo-image"/>
+    <div class="navbar">
+        <div id="menu-icon">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <div class="dropdown">
+            <button class="dropbtn">Department 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Department 1</a>
+                <a href="#">Department 2</a>
+                <a href="#">Department 3</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Programmes
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Programme 1</a>
+                <a href="#">Programme 2</a>
+                <a href="#">Programme 3</a>
+            </div>
+        </div>
+        <a href="#">Student Section</a>
+        <a href="#">Gallery</a>
+        <a href="https://upsosb.org.in/Institute.html">Institute</a>
+        <a href="#">Online Admission</a>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const dropdowns = document.querySelectorAll('.dropdown');
+
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('click', function () {
+                    this.classList.toggle('clicked');
+                });
+            });
+
+            const menuToggle = document.getElementById('menu-icon');
+            const navbar = document.querySelector('.navbar');
+
+            menuToggle.addEventListener('click', () => {
+                navbar.classList.toggle('vertical');
+            });
+        });
+    </script>
+</body>
+</html>
