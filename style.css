@@ -4,38 +4,35 @@
     box-sizing: border-box;
 }
 
-.logo-image {
-    width: 100vw;
-    height: auto;
+.image-container {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
 }
 
 .navbar {
     display: flex;
-    flex-direction: column; /* Change to column for vertical layout */
     justify-content: center;
     align-items: center;
-    text-align: center;
     background-color: #712020;
-    overflow: hidden;
-    transition: height 0.5s; /* Add transition for smooth animation */
-    height: auto; /* Ensure height adjusts dynamically */
+    padding: 10px 0;
 }
 
 .navbar a {
     display: block;
     color: #f2f2f2;
-    text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    transition: background-color 0.3s;
 }
 
 .navbar a:hover {
     background-color: #ddd;
-    color: rgb(78, 23, 23);
+    color: #4e1717;
 }
 
 .dropdown {
-    position: relative; /* Adjust dropdown positioning */
+    position: relative;
 }
 
 .dropdown .dropbtn {
@@ -74,55 +71,57 @@
     display: block;
 }
 
+#menu-icon {
+    display: none;
+}
+
 #menu-icon div {
     width: 35px;
     height: 5px;
     background-color: black;
     margin: 6px 0;
     border-radius: 5px;
-    cursor: pointer; /* Add cursor pointer for better UX */
-}
-
-@media screen and (min-width: 900px) {
-    .navbar {
-        flex-direction: row; /* Change back to row for horizontal layout */
-    }
-
-    .navbar a,
-    .navbar .dropdown {
-        display: block !important; /* Ensure links and dropdowns are visible */
-    }
-
-    #menu-icon {
-        display: none;
-    }
+    cursor: pointer;
 }
 
 @media screen and (max-width: 900px) {
-    .navbar a,
-    .navbar .dropdown {
+    .navbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .dropdown-content {
+        position: static;
+        display: none;
+        background-color: transparent;
+        box-shadow: none;
+        width: 100%;
+    }
+
+    .dropdown-content a {
+        padding: 10px 16px;
+    }
+
+    .dropdown.clicked .dropdown-content {
+        display: block;
+    }
+
+    .navbar a:not(:first-child) {
         display: none;
     }
 
-    .navbar.vertical {
-        height: 100vh; /* Adjust height to cover entire viewport height */
-    }
-
-    .navbar.vertical a,
-    .navbar.vertical .dropdown {
-        display: block; /* Ensure links and dropdowns are visible */
+    .navbar a.icon {
+        float: right;
+        display: block;
     }
 
     #menu-icon {
         display: block;
+        cursor: pointer;
+        float: right;
     }
 
     #menu-icon:hover {
         display: block;
     }
-}
-
-.dropdown:hover .dropdown-content,
-.dropdown.clicked .dropdown-content {
-    display: block;
 }
