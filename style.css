@@ -19,7 +19,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #712020;
+    background-color: #b2f644;
     padding: 10px 0;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .navbar a:hover {
-    background-color: #a2e2ef;
+    background-color: #87bac4;
     color: black;
 }
 
@@ -53,7 +53,7 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #5e0303;
+    background-color: #d875fe;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -68,7 +68,7 @@
 }
 
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: #83fffd;
 }
 
 .dropdown:hover .dropdown-content,
