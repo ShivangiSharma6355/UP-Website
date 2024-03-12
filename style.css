@@ -13,13 +13,23 @@
 
 /* Navbar */
 .navbar {
+    position: relative; /* Initially relative to maintain its position below the header */
+    z-index: 1000; /* Ensure the navbar appears above other content */
+    background-color: #ffa048;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    background-color: #ffa048;
     flex-direction: column;
+    transition: top 0.3s; /* Add smooth transition when navbar position changes */
 }
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%; /* Ensures the fixed navbar spans the full width of the viewport */
+}
+
 .navbar-nav {
     display: flex;
     flex-wrap: wrap;
@@ -132,6 +142,7 @@
         cursor: pointer;
     }
 }
+
 /* Jumbotron */
 .jumbotron {
     background-color: #f5f5f5;
@@ -184,4 +195,3 @@
     padding: 1rem 0;
     text-align: center;
 }
-
